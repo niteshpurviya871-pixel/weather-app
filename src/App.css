@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: #e5e7eb;
+}
+
+.weather{
+    background: linear-gradient(180deg, #1e3c72 0%, #2a5298 50%, #4a90e2 100%);
+    background-attachment: fixed;
+}
+
+.text-headline-md{
+    font-size: 2rem;
+    line-height: 32px;
+    font-weight: 500;
+}
+
+.text-display-temp{
+    font-size: 8rem;
+    line-height: 100px;
+    letter-spacing: -0.04em;
+    font-weight: 200;
+}
+
+.glass-card{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.text-label-caps{
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+}
+
+.no-scrollbar{
+    scrollbar-width: none;
+}
+
+.font-label-caps{
+    font-family: Inter;
+}
+
+.min-w-\[48px\]{
+    min-width: 48px;
+}
+
+.-rotate-45{
+    transform: rotate(-45deg);
+    
+}

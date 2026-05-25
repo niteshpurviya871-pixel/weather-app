@@ -1,0 +1,1 @@
+# TODO: Fix Navbar Import Issue&#10;&#10;- [x] Step 1: Edit src/App.jsx - Fix import path and JSX usage&#10;- [x] Step 2: Edit src/components/navbar.jsx - Rename component to Navbar (PascalCase)&#10;- [x] Step 3: Test by running `npm run dev` and verify Navbar renders&#10;- [x] Step 4: Mark complete
