@@ -10,12 +10,20 @@ import {
 
 import Card from "./Card";
 
+const WeatherHighlight = ({weatherData}) => {
+  if(!weatherData) return null;
+
+
 const cards = [
   {
     id: 1,
     title: "UV Index",
-    value: "4",
-    subtitle: "Moderate",
+    value: weatherData.current.uv,
+    subtitle: weatherData.current.uv < 3
+    ? "Low"
+    :weatherData.current.uv < 6
+    ? "Moderate"
+    : "High",
     icon: Sun,
     bottom: (
       <div className="w-full bg-white/20 h-1 rounded-full overflow-hidden">
@@ -26,11 +34,11 @@ const cards = [
   {
     id: 2,
     title: "Humidity",
-    value: "45%",
+    value:  `${weatherData.current.humidity}%`,
     icon: Droplets,
     bottom: (
       <p className="font-body-md text-white/60 text-sm">
-        The dew point is 52° right now.
+        Humidity Level
       </p>
     ),
   },
@@ -39,18 +47,18 @@ const cards = [
     title: "Wind",
     value: (
       <>
-        12{" "}
+        {weatherData.current.wind_kph}
         <span className="text-sm font-normal text-white/60">
-          mph
+          {" "}km/h
         </span>
       </>
     ),
     icon: Wind,
     bottom: (
-      <div className="relative w-12 h-12 flex items-center transform -rotate-45 justify-center">
+      <div className="relative w-12 h-12 flex items-center justify-center">
         <Navigation
           size={36}
-          className="text-white  fill-white"
+          className="text-white -rotate-45 fill-white"
         />
       </div>
     ),
@@ -60,22 +68,22 @@ const cards = [
     title: "Visibility",
     value: (
       <>
-        10{" "}
+        {weatherData.current.vis_km}
         <span className="text-sm font-normal text-white/60">
-          mi
+          {" "}km
         </span>
       </>
     ),
     icon: Eye,
     bottom: (
       <p className="font-body-md text-white/60 text-sm">
-        It's perfectly clear today.
+        Visibility Range
       </p>
     ),
   },
 ];
 
-const WeatherHighlight = () => {
+
   return (
     <>
       {cards.map((card) => (

@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-const WeatherCard = ({ time, icon: Icon, temp }) => {
+const WeatherCard = ({ time, icon, temp }) => {
   return (
     <div className="flex flex-col items-center min-w-[48px] font-label-caps">
 
@@ -10,10 +10,10 @@ const WeatherCard = ({ time, icon: Icon, temp }) => {
         {time}
       </span>
 
-      <Icon
-        size={24}
-        strokeWidth={1.75}
-        className="text-white mb-2"
+      <img
+        src={`https:${icon}`}
+        alt="weather"
+        className="w-8 h-8 mb-2"
       />
 
       <span className="text-white">
